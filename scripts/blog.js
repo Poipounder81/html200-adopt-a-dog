@@ -1,7 +1,7 @@
 // Refactoring the blog page to generate the blog posts dynamically from JavaScript
 
 // Defines Header
-const header = document.querySelector('header');	
+const header = document.querySelector('header');
 
 // Defines footer
 const footer = document.getElementById("blog-footer");
@@ -19,8 +19,7 @@ container.className = "blog-container";
 document.body.insertBefore(container, footer);
 
 // Creates objects for blogs
-const blogs = [
-  {
+const blogs = [{
     imgSrc: "./images/blog-1.jpg",
     imgAlt: "owner and dog looking over a canyon",
     blogTitle: "Traveling With Your Dog",
@@ -46,33 +45,33 @@ const blogs = [
 
 // Loops objects
 for (let x = 0; x < blogs.length; x += 1) {
-    const object = blogs[x];
+  const object = blogs[x];
 
-    const blogImage = document.createElement("div");
-    blogImage.className = "blog-box1";
-    container.appendChild(blogImage);
+  const blogImage = document.createElement("div");
+  blogImage.className = "blog-box1";
+  container.appendChild(blogImage);
 
-    const image = document.createElement("img");
-    image.setAttribute("src", object.imgSrc);
-    image.setAttribute("alt", object.imgAlt);
-    image.className = "blog-box1";
-    blogImage.appendChild(image);
+  const image = document.createElement("img");
+  image.setAttribute("src", object.imgSrc);
+  image.setAttribute("alt", object.imgAlt);
+  image.className = "blog-box1";
+  blogImage.appendChild(image);
 
-    const blogText = document.createElement("div");
-    blogText.className = "blog-box2";
-    container.appendChild(blogText);
+  const blogText = document.createElement("div");
+  blogText.className = "blog-box2";
+  container.appendChild(blogText);
 
-    const blogTitle = document.createElement("h3");
-    blogTitle.textContent = object.blogTitle;
-    blogText.appendChild(blogTitle);
+  const blogTitle = document.createElement("h3");
+  blogTitle.textContent = object.blogTitle;
+  blogText.appendChild(blogTitle);
 
-    const p1 = document.createElement("p");
-    p1.textContent = object.p1;
-    p1.className = "blog-intro";
-    blogText.appendChild(p1);
+  const p1 = document.createElement("p");
+  p1.textContent = object.p1;
+  p1.className = "blog-intro";
+  blogText.appendChild(p1);
 
-    const p2 = document.createElement("p");
-    p2.textContent = object.p2;
-    p2.className = "blog";
-    blogText.appendChild(p2);
+  const p2 = document.createElement("p");
+  p2.textContent = object.p2;
+  p2.className = "blog";
+  blogText.appendChild(p2);
 }
